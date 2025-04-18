@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Simple Interest Calculator</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body bgcolor="cyan">
+    <h2>Simple Interest Calculator</h2>
+    
+    <label>Enter Principal Amount: <input type="number" id="t1"></label><br><br>
+    <label>Enter Time (in years): <input type="number" id="t2"></label><br><br>
+    <label>Enter Rate (%): <input type="number" id="t3"></label><br><br>
+    
+    <button type="button" onclick="cal()">Click here</button><br><br>
+    <center>
+    
+    <div id="result"></div>
+
+    <script>
+        function cal() {
+            let p = parseFloat(document.getElementById("t1").value);
+            let t = parseFloat(document.getElementById("t2").value);
+            let r = parseFloat(document.getElementById("t3").value);
+            if (isNaN(p)) {
+                document.getElementById("result").innerHTML = "Fill Principal value first";
+            } else if (isNaN(t)) {
+                document.getElementById("result").innerHTML = "Fill Time value";
+            } else if (isNaN(r)) {
+                document.getElementById("result").innerHTML = "Fill Rate value";
+            } else {
+                var res = (p * r * t) / 100;
+                document.getElementById("result").innerHTML = "Simple Interest = " + res.toFixed(2);
+            }
+        }
+    </script>
+</center>
+</body>
+</html>
